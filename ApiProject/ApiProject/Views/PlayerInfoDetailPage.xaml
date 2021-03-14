@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ApiProject.Views.PlayerInfoDetailPage"
+             Title="Information detail"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                <Frame  Margin="10,2" BackgroundColor="LightGray" CornerRadius="360" HeightRequest="100" WidthRequest="100">
+                    <Label  Text="{Binding Player.Jersey}" FontSize="40" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black"/>
+                </Frame>
+                <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label Text="{Binding PlayerFullName}"  VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="30"/>
+                    <Label Text="{Binding Team.FullName}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DodgerBlue" FontSize="19" FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+            
+            
+
+            <StackLayout Orientation="Horizontal" Margin="15,40,0,0">
+                <Label Text="Position: " FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding Player.TeamSitesOnly.PosFull}" FontSize="25" TextColor="Dodgerblue" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
+                <Label Text="Height: " FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding PlayerHeight}" FontSize="25" TextColor="Dodgerblue" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
+                <Label Text="{Binding ActualTeamInfo}" FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding YearDebutActualTeam}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
+                <Label Text="Years as a pro: " FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding Player.YearsPro}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
+                <Label Text="Drafted in: " FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding Player.Draft.SeasonYear}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
+                <Label Text="Round pick: " FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding Player.Draft.RoundNum}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
+                <Label Text="Pick: " FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding Player.Draft.PickNum}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
+                <Label Text="Country: " FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding Player.Country}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
+                <Label Text="Birthday: " FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding Player.DateOfBirthUTC}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
+                <Label Text="Weight: " FontSize="25" TextColor="Black"/>
+                <Label Text="{Binding Player.WeightPounds}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
