@@ -6,36 +6,6 @@ using System.Text.Json.Serialization;
 
 namespace ApiProject.Models
 {
-    //public class Internal
-    //{
-
-    //    [JsonPropertyName("pubDateTime")]
-    //    public string PubDateTime { get; set; }
-
-    //    [JsonPropertyName("igorPath")]
-    //    public string IgorPath { get; set; }
-
-    //    [JsonPropertyName("xslt")]
-    //    public string Xslt { get; set; }
-
-    //    [JsonPropertyName("xsltForceRecompile")]
-    //    public string XsltForceRecompile { get; set; }
-
-    //    [JsonPropertyName("xsltInCache")]
-    //    public string XsltInCache { get; set; }
-
-    //    [JsonPropertyName("xsltCompileTimeMillis")]
-    //    public string XsltCompileTimeMillis { get; set; }
-
-    //    [JsonPropertyName("xsltTransformTimeMillis")]
-    //    public string XsltTransformTimeMillis { get; set; }
-
-    //    [JsonPropertyName("consolidatedDomKey")]
-    //    public string ConsolidatedDomKey { get; set; }
-
-    //    [JsonPropertyName("endToEndTimeMillis")]
-    //    public string EndToEndTimeMillis { get; set; }
-    //}
 
     public class TeamSitesOnly
     {
@@ -161,24 +131,11 @@ namespace ApiProject.Models
         [JsonPropertyName("standard")]
         public IList<Player> Standard { get; set; }
 
-        //[JsonPropertyName("africa")]
-        //public IList<object> Africa { get; set; }
-
-        //[JsonPropertyName("sacramento")]
-        //public IList<object> Sacramento { get; set; }
-
-        //[JsonPropertyName("vegas")]
-        //public IList<object> Vegas { get; set; }
-
-        //[JsonPropertyName("utah")]
-        //public IList<object> Utah { get; set; }
     }
 
     public class Players : INotifyPropertyChanged
     {
 
-        //[JsonPropertyName("_internal")]
-        //public Internal Internal { get; set; }
 
         [JsonPropertyName("league")]
         public LeaguePlayer League { get; set; }
