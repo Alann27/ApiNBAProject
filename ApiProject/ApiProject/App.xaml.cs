@@ -15,10 +15,9 @@ namespace ApiProject
             MainPage = new NavigationPage(new PlayersPage());
         }
 
-        protected override /*async*/ void OnStart()
+        protected override void OnStart()
         {
-            //var nbaApiService = new NbaApiService();
-            //var teamInfo = await nbaApiService.GetTeams();
+
         }
 
         protected override void OnSleep()

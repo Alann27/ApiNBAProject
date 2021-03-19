@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ApiProject.ViewModel
+namespace ApiProject.ViewModels
 {
     public class PlayerInfoDetailViewModel : BaseViewModel
     {
@@ -22,7 +22,7 @@ namespace ApiProject.ViewModel
             PlayerFullName = player.FirstName + " " + player.LastName;
             PlayerHeight = $"{player.HeightFeet}.{player.HeightInches}";
 
-            ActualTeamInfo = $"In {team.FullName} since: ";
+            ActualTeamInfo = $"In {team.Tricode} since: ";
             YearDebutActualTeam = player.Teams[player.Teams.Count - 1].SeasonStart;
         }
 

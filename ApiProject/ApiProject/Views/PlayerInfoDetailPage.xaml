@@ -5,70 +5,54 @@
              Title="Information detail"
              BackgroundColor="White">
     <ContentPage.Content>
-        <StackLayout Padding="15">
+        <ScrollView>
+                <Grid ColumnDefinitions="*,2*" RowDefinitions="4*,*,*,*,*,*,*,*,*,*,*" Padding="15">
+                    <StackLayout Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Frame  Margin="10,2" BackgroundColor="LightGray" CornerRadius="360" HeightRequest="100" WidthRequest="100">
+                            <Label  Text="{Binding Player.Jersey}" FontSize="40" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black"/>
+                        </Frame>
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="{Binding PlayerFullName}"  VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="30"/>
+                            <Label Text="{Binding Team.FullName}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DodgerBlue" FontSize="19" FontAttributes="Bold"/>
+                        </StackLayout>
+                    </StackLayout>
 
-            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center">
-                <Frame  Margin="10,2" BackgroundColor="LightGray" CornerRadius="360" HeightRequest="100" WidthRequest="100">
-                    <Label  Text="{Binding Player.Jersey}" FontSize="40" VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black"/>
-                </Frame>
-                <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label Text="{Binding PlayerFullName}"  VerticalOptions="Center" HorizontalOptions="Center" TextColor="Black" FontSize="30"/>
-                    <Label Text="{Binding Team.FullName}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="DodgerBlue" FontSize="19" FontAttributes="Bold"/>
-                </StackLayout>
-            </StackLayout>
-            
-            
 
-            <StackLayout Orientation="Horizontal" Margin="15,40,0,0">
-                <Label Text="Position: " FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding Player.TeamSitesOnly.PosFull}" FontSize="25" TextColor="Dodgerblue" FontAttributes="Bold"/>
-            </StackLayout>
+                        <Label Text="Position: " FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="1"/>
+                <Label Text="{Binding Player.TeamSitesOnly.PosFull}" Grid.Column="1" Grid.Row="1" FontSize="25" TextColor="Dodgerblue" FontAttributes="Bold"/>
 
-            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
-                <Label Text="Height: " FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding PlayerHeight}" FontSize="25" TextColor="Dodgerblue" FontAttributes="Bold"/>
-            </StackLayout>
+                    <Label Text="Height: " FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="2"/>
+                    <Label Text="{Binding PlayerHeight}" FontSize="25" TextColor="Dodgerblue" FontAttributes="Bold" Grid.Column="1" Grid.Row="2"/>
 
-            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
-                <Label Text="{Binding ActualTeamInfo}" FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding YearDebutActualTeam}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
-            </StackLayout>
 
-            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
-                <Label Text="Years as a pro: " FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding Player.YearsPro}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
-            </StackLayout>
+                <Label Text="{Binding ActualTeamInfo}" FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="3"/>
+                <Label Text="{Binding YearDebutActualTeam}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold" Grid.Column="1" Grid.Row="3"/>
 
-            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
-                <Label Text="Drafted in: " FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding Player.Draft.SeasonYear}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
-            </StackLayout>
 
-            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
-                <Label Text="Round pick: " FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding Player.Draft.RoundNum}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
-            </StackLayout>
 
-            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
-                <Label Text="Pick: " FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding Player.Draft.PickNum}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
-            </StackLayout>
+                <Label Text="Years as pro: " FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="4"/>
+                <Label Text="{Binding Player.YearsPro}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold" Grid.Column="1" Grid.Row="4"/>
 
-            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
-                <Label Text="Country: " FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding Player.Country}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
-            </StackLayout>
+                <Label Text="Drafted in: " FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="5"/>
+                <Label Text="{Binding Player.Draft.SeasonYear}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold" Grid.Column="1" Grid.Row="5"/>
 
-            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
-                <Label Text="Birthday: " FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding Player.DateOfBirthUTC}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
-            </StackLayout>
+                <Label Text="Round pick: " FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="6"/>
+                <Label Text="{Binding Player.Draft.RoundNum}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold" Grid.Column="1" Grid.Row="6"/>
 
-            <StackLayout Orientation="Horizontal" Margin="15,10,0,0">
-                <Label Text="Weight: " FontSize="25" TextColor="Black"/>
-                <Label Text="{Binding Player.WeightPounds}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold"/>
-            </StackLayout>
 
-        </StackLayout>
+                <Label Text="Pick: " FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="7"/>
+                <Label Text="{Binding Player.Draft.PickNum}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold" Grid.Column="1" Grid.Row="7"/>
+
+                <Label Text="Country: " FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="8"/>
+                <Label Text="{Binding Player.Country}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold" Grid.Column="1" Grid.Row="8"/>
+
+                <Label Text="Birthday: " FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="9"/>
+                <Label Text="{Binding Player.DateOfBirthUTC}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold" Grid.Column="1" Grid.Row="9"/>
+
+                <Label Text="Weight: " FontSize="25" TextColor="Black" Grid.Column="0" Grid.Row="10"/>
+                <Label Text="{Binding Player.WeightPounds}" TextColor="Dodgerblue" FontSize="25" FontAttributes="Bold" Grid.Column="1" Grid.Row="10"/>
+            </Grid>
+        </ScrollView>
+
     </ContentPage.Content>
 </ContentPage>

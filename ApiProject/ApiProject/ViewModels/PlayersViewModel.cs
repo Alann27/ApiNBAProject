@@ -9,7 +9,7 @@ using System.Windows.Input;
 using Xamarin.Forms;
 using ApiProject.Views;
 
-namespace ApiProject.ViewModel
+namespace ApiProject.ViewModels
 {
     public class PlayersViewModel : BaseViewModel
     {
@@ -36,12 +36,15 @@ namespace ApiProject.ViewModel
 
         private async void GetActiveTeams()
         {
-            Teams teams = await NbaApiServices.GetTeams();
+            var teams = await NbaApiServices.GetTeams();
 
-            if (teams != null)
+            if (teams.GetType().Name == "Teams")
             {
-                TeamList = new ObservableCollection<Team>(teams.League.Standard);
-                InternetConnection = true;
+                if (teams != null)
+                {
+                    TeamList = new ObservableCollection<Team>(teams.League.Standard);
+                    InternetConnection = true;
+                }
             }
             else
             {
@@ -87,15 +90,16 @@ namespace ApiProject.ViewModel
 
         private async void GetActivePlayers()
         {
-            Players players = new Players();
-            players = await NbaApiServices.GetNbaPlayers();
-
-            if (players != null)
+            var players = await NbaApiServices.GetNbaPlayers();
+            if (players.GetType().Name == "Players")
             {
-                List<Player> activlePlayersList = players.League.Standard.Where(player => player.IsActive == true).ToList();
-                ActivePlayers = new ObservableCollection<Player>(activlePlayersList);
-                AllActivePlayers = new ObservableCollection<Player>(activlePlayersList);
-                InternetConnection = true;
+                if (players != null)
+                {
+                    List<Player> activlePlayersList = players.League.Standard.Where(player => player.IsActive == true).ToList();
+                    ActivePlayers = new ObservableCollection<Player>(activlePlayersList);
+                    AllActivePlayers = new ObservableCollection<Player>(activlePlayersList);
+                    InternetConnection = true;
+                }
             }
             else
             {

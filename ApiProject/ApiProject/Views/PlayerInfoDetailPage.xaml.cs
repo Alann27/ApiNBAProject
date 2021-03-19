@@ -1,6 +1,6 @@
 ﻿using ApiProject.Models;
 using ApiProject.Services;
-using ApiProject.ViewModel;
+using ApiProject.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

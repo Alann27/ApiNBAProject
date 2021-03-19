@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
 
-namespace ApiProject.ViewModel
+namespace ApiProject.ViewModels
 {
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
